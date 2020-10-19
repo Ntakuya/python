@@ -5,5 +5,6 @@ def to_string(bytes_or_str):
         value = bytes_or_str
     return value
 
+
 print(repr(to_string(b'foo')))
 print(repr(to_string('bar')))
