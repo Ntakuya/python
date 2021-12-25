@@ -1,11 +1,8 @@
-FROM python:3.10-alpine
+FROM python:3.9-slim
 
-USER root
-
-RUN apt-get update
+WORKDIR /usr/src/app
 
 COPY . .
 
 RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
-RUN pip install -r requirements.txt
+RUN pip install poetry
