@@ -1,15 +1,8 @@
-FROM python:3
-USER root
+FROM python:3.9-slim
 
-RUN apt-get update
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL ja_JP.UTF-8
-ENV TZ JST-9
-ENV TERM xterm
+WORKDIR /usr/src/app
 
 COPY . .
 
 RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
-RUN pip install -r requirements.txt
+RUN pip install poetry
